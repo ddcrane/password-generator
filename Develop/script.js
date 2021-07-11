@@ -5,14 +5,14 @@
 
 
 // Assignment code here
-var length = function(){
+var passwordLength = function(){
   var result = window.prompt("How many characters do you want your password to be? Enter a number between 8 and 128.");
  if (result >= 8 && result <= 128) {
+   console.log(result);
   return result;
  } else {
   window.alert('Please provide a number no less than 8 and no greater than 128.');
-  length();
-  console.log(length);
+  passwordLength();
  }
 }
 
@@ -24,6 +24,7 @@ if (result === true) {
 } else {
   charTypeLowerCase = false;
 }
+console.log(result);
 }
 
 var charTypeUpperCase = function () {
@@ -33,6 +34,7 @@ var charTypeUpperCase = function () {
 } else {
   charTypeUpperCase = false;
 }
+console.log(result);
 }
 
 var charTypeNumbers = function () {
@@ -42,6 +44,7 @@ var charTypeNumbers = function () {
   } else {
     charTypeNumbers = false;
   }
+  console.log(result);
 }
 
 var charTypeSpecial = function () {
@@ -51,6 +54,7 @@ var charTypeSpecial = function () {
   } else {
     charTypeSpecial = false;
   }
+  console.log(result);
 }
 
 
@@ -58,7 +62,7 @@ var charTypeSpecial = function () {
 //generate password
 function generatePassword() {
   //call criteria functions
-  length();
+  passwordLength();
   charTypeLowerCase();
   charTypeUpperCase();
   charTypeSpecial();
@@ -118,23 +122,17 @@ function generatePassword() {
     charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~0123456789"
   }
 
-
   var pass =""
-
-  for (i = 1; i <= length; i++) {
-    var passLength = Math.floor(Math.random() * charSet.length + 1);
-      
-    pass += str.charAt(passLength);
+  
+ 
+  for (var i = 1; i <= charSet.length; i++) {
+    pass = Math.floor(Math.random() * charSet.length + 1);
+      console.log(pass);
+    pass += charSet.charAt(pass);
+    return pass;
   }
-  console.log(pass);
-  return pass;
   
 }
-
-
-
-
-
 
 
 
