@@ -5,4 +5,4 @@ This page creates a random password based on the user's input...at least it's su
 
 https://github.com/ddcrane/password-generator
 
-<img src="./assets/screenshot.png/ ">
+<img src="./assets/images/screenshot.png/ ">
